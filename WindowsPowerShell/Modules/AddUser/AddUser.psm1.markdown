@@ -1,11 +1,11 @@
-# ±¾µØµ÷ÓÃ Powershell ´´½¨ÓÃ»§ÓÊÏä
+# æœ¬åœ°è°ƒç”¨ Powershell åˆ›å»ºç”¨æˆ·é‚®ç®±
 ```powershell
 function Remote-Ex {
-# ¸Ã½Å±¾¸ú Exchange ·şÎñÆ÷ pekdc1-hub-01.yxtoa.cn ½¨Á¢Ò»¸öÔ¶³Ì»á»°
-# ÔÚ±¾µØ Powershell ¿ØÖÆÌ¨ÖĞ¾Í¿ÉÒÔµ÷ÓÃ Exchange Managment Console ÖĞµÄÃüÁî
-# ¸Ã½Å±¾´æ´¢ÁË¹ÜÀíÔ±ÕËºÅºÍÃÜÂë
-# ½¨Á¢»á»°ºó¿ÉÒÔµ÷ÓÃ±¾µØµÄ Powershell ½Å±¾
-# ±¾µØ Powershell ²»ĞèÒªÒÔ¹ÜÀíÔ±Éí·İÔËĞĞ
+# è¯¥è„šæœ¬è·Ÿ Exchange æœåŠ¡å™¨ pekdc1-hub-01.yxtoa.cn å»ºç«‹ä¸€ä¸ªè¿œç¨‹ä¼šè¯
+# åœ¨æœ¬åœ° Powershell æ§åˆ¶å°ä¸­å°±å¯ä»¥è°ƒç”¨ Exchange Managment Console ä¸­çš„å‘½ä»¤
+# è¯¥è„šæœ¬å­˜å‚¨äº†ç®¡ç†å‘˜è´¦å·å’Œå¯†ç 
+# å»ºç«‹ä¼šè¯åå¯ä»¥è°ƒç”¨æœ¬åœ°çš„ Powershell è„šæœ¬
+# æœ¬åœ° Powershell ä¸éœ€è¦ä»¥ç®¡ç†å‘˜èº«ä»½è¿è¡Œ
 $user_name="yxtoa\zhangwuji.admin";
 $pwd=ConvertTo-SecureString  'sunzhenxia' -AsPlainText -Force;
 $credential=New-Object System.Management.Automation.PSCredential($user_name,$pwd);
@@ -15,28 +15,28 @@ Import-PSSession $session -AllowClobber
 Export-ModuleMember Remote-Ex
 Remote-Ex
 
-# Ö®Ç°ÓĞÑ§Ï°¹ıPowerShell,µ«ÊÇÃ»ÓĞÓÃÉÏ£¬¸ôÁË¶ÎÊ±¼äÍü¼ÇµÄ²î²»¶àÁË¡£ÕâÁ½ÌìĞÂ¼ÓÁËÁ½Ì¨²âÊÔ»ú£¬¾ÍÏëÊÔÒ»ÏÂÔ¶³Ìµã¼ì£¬¾Íµ·¹ÄÒ»ÏÂÔ¶³Ì¹ÜÀíÅäÖÃ¡£¹¤×÷×éÄ£Ê½+Windows2008 R2 Enterprise+PowerShell2.0.
-# ÎÒµÄ¹¤×÷PC½Ğ win7£¬Òªµã¼ìµÄ·şÎñÆ÷¾Í½Ğ server£¬ÎŞÂÛÊÇServer»¹ÊÇClient¶¼Òª¿ªÆôWindows Remote Management (WS-Management)·şÎñ¡£
-1.ÔÚ  server ÉÏ´ò¿ªPowerShell£¬Ö´ĞĞEnable-PSRemoting ¨CForce£¬½Ó×Å°´ÌáÊ¾ÊäÈëY»Ø³µ£¬ÏµÍ³»á×Ô¶¯ÅäÖÃÏà¹Ø¹¦ÄÜ¡£
-2.ÔÚ win7 ÉÏ´ò¿ªPowerShell£¬Ö´ĞĞcd WSMan::localhost\client,ÕâÊÇÇĞµ½Ô¶³Ì¹ÜÀíµÄclientÄ¿Â¼ÏÂ¡£      £¨ÒòÎªÎÒÔÚ¹¤×÷×éÄ£Ê½ÏÂ£¬Èç¹ûÊÇÓò»·¾³¾Í²»ĞèÒªÁË£¬Ô¶³ÌÁ¬½ÓÊ±×Ô¶¯Ì×ÓÃµ±Ç°ÓÃ»§À´ÈÏÖ¤¡££©
-    # È»ºóÖ´ĞĞGet-ChildItem£¬¿´Ò»ÏÂÓĞÊ²Ã´×ÓÏî¡£
-	# Ö´ĞĞSet-Item ./TrustedHosts 192.168.1.111, °Ñserver µÄIP¼Óµ½ServerÉÏÊÜĞÅÖ÷»úÀïÈ¥¡£
-    # 192.168.1.111 ÊÇÎÒÆäÖĞÒ»Ì¨·şÎñÆ÷£¬Òª¼Ó¶àÌ¨µÄ»°£¬ÓÃ¶ººÅ·Ö¸ôIP: Set-Item ./TrustedHosts '192.168.1.110,192.168.1.111,192.168.1.112'
+# ä¹‹å‰æœ‰å­¦ä¹ è¿‡PowerShell,ä½†æ˜¯æ²¡æœ‰ç”¨ä¸Šï¼Œéš”äº†æ®µæ—¶é—´å¿˜è®°çš„å·®ä¸å¤šäº†ã€‚è¿™ä¸¤å¤©æ–°åŠ äº†ä¸¤å°æµ‹è¯•æœºï¼Œå°±æƒ³è¯•ä¸€ä¸‹è¿œç¨‹ç‚¹æ£€ï¼Œå°±æ£é¼“ä¸€ä¸‹è¿œç¨‹ç®¡ç†é…ç½®ã€‚å·¥ä½œç»„æ¨¡å¼+Windows2008 R2 Enterprise+PowerShell2.0.
+# æˆ‘çš„å·¥ä½œPCå« win7ï¼Œè¦ç‚¹æ£€çš„æœåŠ¡å™¨å°±å« serverï¼Œæ— è®ºæ˜¯Serverè¿˜æ˜¯Clientéƒ½è¦å¼€å¯Windows Remote Management (WS-Management)æœåŠ¡ã€‚
+1.åœ¨  server ä¸Šæ‰“å¼€PowerShellï¼Œæ‰§è¡ŒEnable-PSRemoting â€“Forceï¼Œæ¥ç€æŒ‰æç¤ºè¾“å…¥Yå›è½¦ï¼Œç³»ç»Ÿä¼šè‡ªåŠ¨é…ç½®ç›¸å…³åŠŸèƒ½ã€‚
+2.åœ¨ win7 ä¸Šæ‰“å¼€PowerShellï¼Œæ‰§è¡Œcd WSMan::localhost\client,è¿™æ˜¯åˆ‡åˆ°è¿œç¨‹ç®¡ç†çš„clientç›®å½•ä¸‹ã€‚      ï¼ˆå› ä¸ºæˆ‘åœ¨å·¥ä½œç»„æ¨¡å¼ä¸‹ï¼Œå¦‚æœæ˜¯åŸŸç¯å¢ƒå°±ä¸éœ€è¦äº†ï¼Œè¿œç¨‹è¿æ¥æ—¶è‡ªåŠ¨å¥—ç”¨å½“å‰ç”¨æˆ·æ¥è®¤è¯ã€‚ï¼‰
+    # ç„¶åæ‰§è¡ŒGet-ChildItemï¼Œçœ‹ä¸€ä¸‹æœ‰ä»€ä¹ˆå­é¡¹ã€‚
+	# æ‰§è¡ŒSet-Item ./TrustedHosts 192.168.1.111, æŠŠserver çš„IPåŠ åˆ°Serverä¸Šå—ä¿¡ä¸»æœºé‡Œå»ã€‚
+    # 192.168.1.111 æ˜¯æˆ‘å…¶ä¸­ä¸€å°æœåŠ¡å™¨ï¼Œè¦åŠ å¤šå°çš„è¯ï¼Œç”¨é€—å·åˆ†éš”IP: Set-Item ./TrustedHosts '192.168.1.110,192.168.1.111,192.168.1.112'
 	
-3. µ½ÕâÀïÔ¶³Ì¹ÜÀíµÄÅäÖÃ¾ÍÍê³ÉÁË¡£²âÊÔÒ»ÏÂ£¬ÔÚ win7 ÉÏÖ´ĞĞ£º
-   # $Credential=Get-Credential ¨CCredential Administrator;
-   # Enter-PSSession ¨CComputerName   192.168.1.110 ¨CCredential $Credential
-   # µ¯³öÒ»¸ö¿òÒªÇóÊäÈëµ±Ç°ÒªÁ¬½Ó·şÎñÆ÷µÄÓÃ»§ÃûºÍÃÜÂë£¬ÎÒÕâÀïÓÃµÄÊÇ¹ÜÀíÔ±¡£
-   # ÕâÖ»ÊÇÒ»¸ö´¿´âÔÚ¹¤×÷×éÇé¿öÏÂµÄ¼òµ¥ÅäÖÃÔ¶³Ì¹ÜÀíµÄ·½Ê½£¬ÓĞºÜ¶àÏ¸½ÚºÍÓĞÒâÒåµÄµØ·½Ã»ÓĞÌáµ½¡£
+3. åˆ°è¿™é‡Œè¿œç¨‹ç®¡ç†çš„é…ç½®å°±å®Œæˆäº†ã€‚æµ‹è¯•ä¸€ä¸‹ï¼Œåœ¨ win7 ä¸Šæ‰§è¡Œï¼š
+   # $Credential=Get-Credential â€“Credential Administrator;
+   # Enter-PSSession â€“ComputerName   192.168.1.110 â€“Credential $Credential
+   # å¼¹å‡ºä¸€ä¸ªæ¡†è¦æ±‚è¾“å…¥å½“å‰è¦è¿æ¥æœåŠ¡å™¨çš„ç”¨æˆ·åå’Œå¯†ç ï¼Œæˆ‘è¿™é‡Œç”¨çš„æ˜¯ç®¡ç†å‘˜ã€‚
+   # è¿™åªæ˜¯ä¸€ä¸ªçº¯ç²¹åœ¨å·¥ä½œç»„æƒ…å†µä¸‹çš„ç®€å•é…ç½®è¿œç¨‹ç®¡ç†çš„æ–¹å¼ï¼Œæœ‰å¾ˆå¤šç»†èŠ‚å’Œæœ‰æ„ä¹‰çš„åœ°æ–¹æ²¡æœ‰æåˆ°ã€‚
    
    
    
-   #  ÔÚ²»¼ÓÓòµÄ Win7 ¼ÆËã»úÉÏÆôÓÃ Enable-PSRemoting Óöµ½µÄÎÊÌâ
-   #   1¡¢Administrator Ã»ÓĞÉèÖÃÃÜÂëÊ±ÌáÊ¾¾Ü¾ø·ÃÎÊ
-   #   2¡¢Îª Administrator ÉèÖÃÃÜÂëºóÔÙ³¢ÊÔÆôÓÃ  Enable-PSRemoting £¬ÌáÊ¾ÓÉÓÚ¼ÆËã»úÉÏµÄÍøÂçÁ¬½ÓÀàĞÍÖ®Ò»ÉèÖÃÎª¹«ÓÃ£¬Òò´Ë
-   #       WinRM ·À»ğÇ½ÀıÍâ½«²»ÔËĞĞ¡£½«ÍøÂçÁ¬½ÓÀàĞÍ¸ü¸ÄÎªÓò»ò×¨ÓÃ£¬È»ºóÔÙ³¢ÊÔ¡£
-   #   3¡¢ ½â¾ö·½·¨ÊÇ µã»÷ÍøÂçºÍ¹²ÏíÖĞĞÄ -> ²é¿´»î¶¯ÍøÂç -> µã»÷¹«ÓÃÍøÂç -> ¸ü¸ÄÎª¹¤×÷ÍøÂç
-   #   4¡¢ È»ºóÒÔ¹ÜÀíÔ±Éí·İÖØĞÂÔËĞĞ  Enable-PSRemoting  ¼´¿É
+   #  åœ¨ä¸åŠ åŸŸçš„ Win7 è®¡ç®—æœºä¸Šå¯ç”¨ Enable-PSRemoting é‡åˆ°çš„é—®é¢˜
+   #   1ã€Administrator æ²¡æœ‰è®¾ç½®å¯†ç æ—¶æç¤ºæ‹’ç»è®¿é—®
+   #   2ã€ä¸º Administrator è®¾ç½®å¯†ç åå†å°è¯•å¯ç”¨  Enable-PSRemoting ï¼Œæç¤ºç”±äºè®¡ç®—æœºä¸Šçš„ç½‘ç»œè¿æ¥ç±»å‹ä¹‹ä¸€è®¾ç½®ä¸ºå…¬ç”¨ï¼Œå› æ­¤
+   #       WinRM é˜²ç«å¢™ä¾‹å¤–å°†ä¸è¿è¡Œã€‚å°†ç½‘ç»œè¿æ¥ç±»å‹æ›´æ”¹ä¸ºåŸŸæˆ–ä¸“ç”¨ï¼Œç„¶åå†å°è¯•ã€‚
+   #   3ã€ è§£å†³æ–¹æ³•æ˜¯ ç‚¹å‡»ç½‘ç»œå’Œå…±äº«ä¸­å¿ƒ -> æŸ¥çœ‹æ´»åŠ¨ç½‘ç»œ -> ç‚¹å‡»å…¬ç”¨ç½‘ç»œ -> æ›´æ”¹ä¸ºå·¥ä½œç½‘ç»œ
+   #   4ã€ ç„¶åä»¥ç®¡ç†å‘˜èº«ä»½é‡æ–°è¿è¡Œ  Enable-PSRemoting  å³å¯
    
    
 Function Send-Email {
@@ -55,17 +55,17 @@ Function Send-Email {
    $mail.To.Add($MailtoAddress)
 
 # set the content
-   $mail.Subject     = "$display_name ,»¶Ó­¼ÓÈëÈç·ç´ï!";
+   $mail.Subject     = "$display_name ,æ¬¢è¿åŠ å…¥è½å·!";
    $mail.Priority    = "High"
-   $mail.Body        = "$display_name ÓÊÏäÒÑ¿ªÍ¨, Ğ»Ğ»£¡`n
-                        µÇÂ¼Ãû£º $pinyin  `n
-						³õÊ¼ÃÜÂë£º caipiaowoyou Ê××ÖÄ¸´óĞ´ `n
+   $mail.Body        = "$display_name é‚®ç®±å·²å¼€é€š, è°¢è°¢ï¼`n
+                        ç™»å½•åï¼š $pinyin  `n
+						åˆå§‹å¯†ç ï¼š caipiaowoyou é¦–å­—æ¯å¤§å†™ `n
 						
-Çë¼°Ê±ĞŞ¸Ä³õÊ¼ÃÜÂë£¬ĞÂÉèÖÃÃÜÂëÒª·ûºÏÃÜÂë¸´ÔÓĞÔ²ßÂÔ£º`n
-±ØĞëÓĞ×ÖÄ¸´óĞ´»òĞ¡Ğ´£¨A-Z¡¢a-z£©¡¢Êı×Ö£¨0-9£©ÒÔ¼°ÌØÊâ·ûºÅ£¨£¡¡¢@¡¢#¡¢£¤¡­.£©8Î»»ò8Î»ÒÔÉÏ×Ö·û¡£`n
+è¯·åŠæ—¶ä¿®æ”¹åˆå§‹å¯†ç ï¼Œæ–°è®¾ç½®å¯†ç è¦ç¬¦åˆå¯†ç å¤æ‚æ€§ç­–ç•¥ï¼š`n
+å¿…é¡»æœ‰å­—æ¯å¤§å†™æˆ–å°å†™ï¼ˆA-Zã€a-zï¼‰ã€æ•°å­—ï¼ˆ0-9ï¼‰ä»¥åŠç‰¹æ®Šç¬¦å·ï¼ˆï¼ã€@ã€#ã€ï¿¥â€¦.ï¼‰8ä½æˆ–8ä½ä»¥ä¸Šå­—ç¬¦ã€‚`n
 					   "  
 # set attachment
-# $filename="C:\Users\Administrator\Desktop\Exchange 2010ÒÀÀµ°ü.txt"
+# $filename="C:\Users\Administrator\Desktop\Exchange 2010ä¾èµ–åŒ….txt"
 # $attachment = new-Object System.Net.Mail.Attachment($filename)
 # $mail.Attachments.Add($attachment)				   
 					   
@@ -93,7 +93,7 @@ switch($display_name_length)
    {$_ -eq 3 }   { $LastName = $display_name[0];                  $FirstName = $display_name[1]+$display_name[2]; break  }     
    {$_ -eq 2 }   { $LastName = $display_name[0];                  $FirstName = $display_name[1]                 ; break  }     
    {$_ -eq 4 }   { $LastName = $display_name[0]+$display_name[1]; $FirstName = $display_name[2]+$display_name[3]; break  }     
-   Default       {"ÊäÈë´íÎó£¡"}
+   Default       {"è¾“å…¥é”™è¯¯ï¼"}
  } 
 
  Write-host	"$LastName-$FirstName"
@@ -102,9 +102,9 @@ switch($display_name_length)
 
 if($mailbox) {
    Send-Email
-   Write-Host "$name ÓÊÏä´´½¨³É¹¦£¬ÒÑ·¢ËÍÓÊ¼ş£¡"  -ForegroundColor green
+   Write-Host "$name é‚®ç®±åˆ›å»ºæˆåŠŸï¼Œå·²å‘é€é‚®ä»¶ï¼"  -ForegroundColor green
    } else {
-       Write-Host "$name ÓÊÏä´´½¨Ê§°Ü£¬Çë¼ì²éÊÇ·ñÖØÃû" -ForegroundColor red
+       Write-Host "$name é‚®ç®±åˆ›å»ºå¤±è´¥ï¼Œè¯·æ£€æŸ¥æ˜¯å¦é‡å" -ForegroundColor red
    }
  }
 
